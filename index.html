@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiStore: AI Retail Optimization</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-store"></i>
+                <span>OptiStore AI <span class="badge">PRO</span></span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-target="inventory">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Smart Inventory</span>
+                </a>
+                <a href="#" class="nav-item" data-target="clienteling">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    <span>VIP Clienteling</span>
+                </a>
+                <a href="#" class="nav-item" data-target="settings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=33" alt="Manager Profile">
+                    <div class="user-info">
+                        <h4>Jane Doe</h4>
+                        <p>Store Manager</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search insights, inventory, or customers...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="notification-dot"></span></button>
+                    <button class="icon-btn"><i class="fa-solid fa-microchip"></i></button>
+                    <div class="store-status">
+                        <span class="status-indicator online"></span>
+                        <span>Store 012 - Seattle, WA</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard View -->
+            <section id="dashboard" class="view-section active custom-scroll">
+                <div class="view-header">
+                    <h2>Overview</h2>
+                    <p>AI Insights & Key Performance Indicators</p>
+                </div>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-card glass">
+                        <div class="kpi-icon gradient-blue"><i class="fa-solid fa-shoe-prints"></i></div>
+                        <div class="kpi-content">
+                            <h3>Foot Traffic</h3>
+                            <div class="kpi-value">
+                                <h2>1,429</h2>
+                                <span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 12%</span>
+                            </div>
+                            <p>Today vs Yesterday</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card glass">
+                        <div class="kpi-icon gradient-purple"><i class="fa-solid fa-sack-dollar"></i></div>
+                        <div class="kpi-content">
+                            <h3>Revenue Est.</h3>
+                            <div class="kpi-value">
+                                <h2>$18,400</h2>
+                                <span class="trend up"><i class="fa-solid fa-arrow-trend-up"></i> 5%</span>
+                            </div>
+                            <p>Projected EOD</p>
+                        </div>
+                    </div>
+                    <div class="kpi-card glass warning-card">
+                        <div class="kpi-icon gradient-orange"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="kpi-content">
+                            <h3>Stock Alerts</h3>
+                            <div class="kpi-value">
+                                <h2>14 Items</h2>
+                            </div>
+                            <p>High out-of-stock risk</p>
+                        </div>
+                        <button class="action-btn small" onclick="switchTab('inventory')">View</button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="panel glass chart-panel">
+                        <div class="panel-header">
+                            <h3>Traffic vs. Conversion</h3>
+                            <select class="glass-select"><option>Today</option><option>This Week</option></select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="panel glass ai-insights">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--primary);"></i> AI Recommendations</h3>
+                        </div>
+                        <div class="insight-list">
+                            <div class="insight-item">
+                                <div class="insight-icon bg-success-dim"><i class="fa-solid fa-tag text-success"></i></div>
+                                <div class="insight-text">
+                                    <h4>Dynamic Pricing Opportunity</h4>
+                                    <p>Lower price of 'Winter Coats' by 5% to clear inventory faster before season end.</p>
+                                </div>
+                                <button class="action-btn text-only">Apply</button>
+                            </div>
+                            <div class="insight-item">
+                                <div class="insight-icon bg-warning-dim"><i class="fa-solid fa-users text-warning"></i></div>
+                                <div class="insight-text">
+                                    <h4>Staffing Alert</h4>
+                                    <p>Predicted foot traffic spike at 4:00 PM. Recommend moving 2 staff from stockroom to floor.</p>
+                                </div>
+                                <button class="action-btn text-only">Alert Staff</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Smart Inventory View -->
+            <section id="inventory" class="view-section custom-scroll">
+                <div class="view-header">
+                    <h2>Smart Inventory</h2>
+                    <p>Predictive Restocking and Risk Analysis</p>
+                </div>
+                
+                <div class="panel glass">
+                    <div class="panel-header">
+                        <h3>Critical Stock Risks</h3>
+                        <div class="table-actions">
+                            <button class="action-btn primary"><i class="fa-solid fa-truck-fast"></i> Auto-Order Selected</button>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Item</th>
+                                    <th>Current Stock</th>
+                                    <th>Sales Vel. (Daily)</th>
+                                    <th>Est. Depletion</th>
+                                    <th>AI Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventory-table-body">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIP Clienteling View -->
+            <section id="clienteling" class="view-section custom-scroll">
+                <div class="view-header">
+                    <div class="title-with-badge">
+                        <h2>In-Store VIP Customers</h2>
+                        <span class="live-badge"><span class="pulse"></span> LIVE</span>
+                    </div>
+                    <p>Opt-in customers detected via beacon. Offer personalized assistance.</p>
+                </div>
+                
+                <div class="vip-grid" id="vip-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </section>
+            
+             <!-- Settings View -->
+            <section id="settings" class="view-section custom-scroll">
+                <div class="view-header">
+                    <h2>System Settings</h2>
+                    <p>Configure automation and data integrations</p>
+                </div>
+                <div class="panel glass">
+                    <div class="settings-list">
+                        <div class="setting-item">
+                             <div class="setting-info">
+                                 <h4>Auto-Restock Thresholds</h4>
+                                 <p>Allow AI to automatically schedule deliveries when items hit risk threshold.</p>
+                             </div>
+                             <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                             </label>
+                        </div>
+                         <div class="setting-item">
+                             <div class="setting-info">
+                                 <h4>Dynamic Pricing Autonomy</h4>
+                                 <p>Allow system to adjust prices on electronic shelf labels within approved margins.</p>
+                             </div>
+                             <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                             </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
