@@ -76,17 +76,17 @@ function initChart() {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    labels: { color: '#94a3b8', font: { family: 'Inter' } }
+                    labels: { color: '#64748b', font: { family: 'Inter' } }
                 }
             },
             scales: {
                 x: {
-                    grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
-                    ticks: { color: '#94a3b8' }
+                    grid: { color: 'rgba(0,0,0,0.05)', drawBorder: false },
+                    ticks: { color: '#64748b' }
                 },
                 y: {
-                    grid: { color: 'rgba(255,255,255,0.05)', drawBorder: false },
-                    ticks: { color: '#94a3b8' }
+                    grid: { color: 'rgba(0,0,0,0.05)', drawBorder: false },
+                    ticks: { color: '#64748b' }
                 }
             },
             interaction: {
